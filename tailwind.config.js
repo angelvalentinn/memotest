@@ -11,6 +11,9 @@ export default {
         "secundary" : "#eee",
         "terciary" : "#2D4356"
       }},
+      boxShadow: {
+        'custom-shadow': '35px 23px 18px 0px rgba(0,0,0,0.75)',
+      }
   },
   plugins: [],
 }

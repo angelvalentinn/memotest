@@ -1,7 +1,6 @@
-import { IMAGES } from "../utils/constantes"
 
-const WinnerModal = ({ reiniciar, timer, encontrados }) => {
-    if (encontrados.length != IMAGES.length) return
+const WinnerModal = ({ reiniciar, timer, encontrados, dificultad }) => {
+    if (encontrados.length != dificultad.length) return
 
     return (
         <section className="border bg-terciary h-64 w-64 flex flex-col items-center justify-evenly absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 rounded-md ">

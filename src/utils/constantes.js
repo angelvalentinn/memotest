@@ -1,4 +1,14 @@
-export const IMAGES = [
+export const IMAGES_FACIL = [
+    "https://icongr.am/devicon/typescript-original.svg?size=69&color=currentColor",
+    "https://icongr.am/devicon/javascript-original.svg?size=69&color=currentColor",
+    "https://icongr.am/devicon/c-original.svg?size=69&color=currentColor",
+    "https://icongr.am/devicon/chrome-original.svg?size=69&color=currentColor",
+    "https://icongr.am/devicon/ie10-original.svg?size=69&color=currentColor",
+    "https://icongr.am/devicon/html5-original.svg?size=69&color=currentColor",
+    
+].flatMap((item) => [`a|${item}`, `b|${item}`])/* .sort( () => Math.random() - 0.5) */;
+
+export const IMAGES_MEDIO = [
     "https://icongr.am/devicon/typescript-original.svg?size=69&color=currentColor",
     "https://icongr.am/devicon/javascript-original.svg?size=69&color=currentColor",
     "https://icongr.am/devicon/c-original.svg?size=69&color=currentColor",

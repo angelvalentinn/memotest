@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IMAGES } from "./utils/constantes";
+import { IMAGES_DIFICIL, IMAGES_FACIL, IMAGES_MEDIO } from "./utils/constantes";
 import Header from "./components/Header";
 import "./index.css";
 import WinnerModal from "./components/WinnerModal";
@@ -12,6 +12,7 @@ function App() {
   const [jugar, setJugar] = useState(false);
   const [timer, setTimer] = useState(0);
   const [win, setWin] = useState(false);
+  const [dificultad, setDificultad] = useState(IMAGES_FACIL);
 
   const classBtn = jugar ? "hidden" : "";
 
@@ -27,7 +28,7 @@ function App() {
   }, [seleccionados]);
 
   useEffect(() => {
-    if (encontrados.length == IMAGES.length) {
+    if (encontrados.length == dificultad.length) {
       setWin(true);
       setJugar(false);
     }
@@ -52,7 +53,7 @@ function App() {
 
   return (
     <div className=" bg-terciary text-secundary h-screen flex  flex-col items-center gap-3 ">
-      <Header />
+      <Header setDificultad={setDificultad} reiniciar={reiniciar} />
 
       <Main
         win={win}
@@ -60,11 +61,12 @@ function App() {
         setSeleccionados={setSeleccionados}
         jugar={jugar}
         encontrados={encontrados}
+        dificultad={dificultad}
       />
       
-      <WinnerModal reiniciar={reiniciar} timer={timer} encontrados={encontrados} />
+      <WinnerModal reiniciar={reiniciar} timer={timer} encontrados={encontrados} dificultad={dificultad} />
 
-      <Footer win={win} classBtn={classBtn} timer={timer} setJugar={setJugar} />
+      <Footer win={win} classBtn={classBtn} timer={timer} setJugar={setJugar} dificultad={dificultad} />
     </div>
   );
 }
